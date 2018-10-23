@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa0ec0ed9e754c919960b85965bb7775" Name="Diagram1">
+        <EntityTypeShape EntityType="db_admModel.fact_cat" Width="1.5" PointX="6" PointY="3.75" />
+        <EntityTypeShape EntityType="db_admModel.fact_est_clte" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="db_admModel.fact_est_emp" Width="1.5" PointX="0.75" PointY="14.375" />
+        <EntityTypeShape EntityType="db_admModel.fact_est_fisc" Width="1.5" PointX="3" PointY="18.375" />
+        <EntityTypeShape EntityType="db_admModel.fact_est_inv_prod" Width="1.5" PointX="6" PointY="26.5" />
+        <EntityTypeShape EntityType="db_admModel.fact_est_prov" Width="1.5" PointX="3" PointY="21.375" />
+        <EntityTypeShape EntityType="db_admModel.fact_est_usr" Width="1.5" PointX="9" PointY="10.125" />
+        <EntityTypeShape EntityType="db_admModel.fact_linea" Width="1.5" PointX="6" PointY="28.875" />
+        <EntityTypeShape EntityType="db_admModel.fact_marca" Width="1.5" PointX="6" PointY="24.125" />
+        <EntityTypeShape EntityType="db_admModel.fact_tipo_rfc" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="db_admModel.fact_tipo_usr" Width="1.5" PointX="9" PointY="18.5" />
+        <EntityTypeShape EntityType="db_admModel.inf_clte" Width="1.5" PointX="5.25" PointY="6.875" />
+        <EntityTypeShape EntityType="db_admModel.inf_emp" Width="1.5" PointX="3" PointY="13.125" />
+        <EntityTypeShape EntityType="db_admModel.inf_fisc" Width="1.5" PointX="5.25" PointY="12.875" />
+        <EntityTypeShape EntityType="db_admModel.inf_inv" Width="1.5" PointX="8.25" PointY="12.625" />
+        <EntityTypeShape EntityType="db_admModel.inf_prov" Width="1.5" PointX="5.25" PointY="18.875" />
+        <EntityTypeShape EntityType="db_admModel.inf_sepomex" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_admModel.inf_usr" Width="1.5" PointX="11.25" PointY="12.75" />
+        <AssociationConnector Association="db_admModel.FK_inf_inv_fact_cat" />
+        <AssociationConnector Association="db_admModel.FK_inf_clte_fact_est_clte" />
+        <AssociationConnector Association="db_admModel.FK_inf_emp_fact_est_emp" />
+        <AssociationConnector Association="db_admModel.FK_inf_fisc_fact_est_fisc" />
+        <AssociationConnector Association="db_admModel.FK_inf_inv_fact_est_inv_prod" />
+        <AssociationConnector Association="db_admModel.FK_inf_prov_fact_est_prov" />
+        <AssociationConnector Association="db_admModel.FK_inf_usr_fact_est_usr" />
+        <AssociationConnector Association="db_admModel.FK_inf_inv_fact_linea" />
+        <AssociationConnector Association="db_admModel.FK_inf_inv_fact_marca" />
+        <AssociationConnector Association="db_admModel.FK_inf_clte_fact_tipo_rfc" />
+        <AssociationConnector Association="db_admModel.FK_inf_fisc_fact_tipo_rfc" />
+        <AssociationConnector Association="db_admModel.FK_inf_prov_fact_tipo_rfc" />
+        <AssociationConnector Association="db_admModel.FK_inf_usr_fact_tipo_usr" />
+        <AssociationConnector Association="db_admModel.FK_inf_clte_inf_emp" />
+        <AssociationConnector Association="db_admModel.FK_inf_fisc_inf_emp" />
+        <AssociationConnector Association="db_admModel.FK_inf_inv_inf_emp" />
+        <AssociationConnector Association="db_admModel.FK_inf_prov_inf_emp" />
+        <AssociationConnector Association="db_admModel.FK_inf_usr_inf_emp" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

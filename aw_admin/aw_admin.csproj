@@ -56,6 +56,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -74,6 +76,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="acceso.aspx" />
+    <Content Include="acceso\js\main.js" />
+    <Content Include="acceso\now-ui-kit.css" />
+    <Content Include="acceso\nucleo-icons.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -117,6 +123,19 @@
     <Content Include="Content\webfonts\fa-brands-400.woff" />
     <Content Include="Content\webfonts\fa-brands-400.ttf" />
     <Content Include="Content\webfonts\fa-brands-400.eot" />
+    <Content Include="img\app_ico.png" />
+    <Content Include="img\nophoto.svg" />
+    <Content Include="md_admin.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>md_admin.edmx</DependentUpon>
+      <LastGenOutput>md_admin.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="md_admin.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>md_admin.edmx</DependentUpon>
+      <LastGenOutput>md_admin.cs</LastGenOutput>
+    </Content>
+    <Content Include="pnl_ctrl.aspx" />
     <Content Include="registro_inicial.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -132,6 +151,14 @@
     <Content Include="Scripts\fontawesome\solid.min.js" />
     <Content Include="Scripts\fontawesome\v4-shims.js" />
     <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <EntityDeploy Include="md_admin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>md_admin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="md_admin.edmx.diagram">
+      <DependentUpon>md_admin.edmx</DependentUpon>
+    </Content>
+    <Content Include="acceso\now-ui-kit.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -140,8 +167,92 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acceso.aspx.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acceso.aspx.designer.cs">
+      <DependentUpon>acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="encrypta.cs" />
+    <Compile Include="fact_cat.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_clte.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_emp.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_fisc.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_inv_prod.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_prov.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_est_usr.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_linea.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_marca.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_rfc.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_usr.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="inf_clte.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_emp.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_fisc.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_inv.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_prov.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_sepomex.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usr.cs">
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="md_admin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>md_admin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="md_admin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>md_admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="md_admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>md_admin.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pnl_ctrl.aspx.cs">
+      <DependentUpon>pnl_ctrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pnl_ctrl.aspx.designer.cs">
+      <DependentUpon>pnl_ctrl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registro_inicial.aspx.cs">
@@ -166,6 +277,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

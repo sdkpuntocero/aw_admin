@@ -1,0 +1,1349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_admModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="fact_cat">
+          <Key>
+            <PropertyRef Name="catID" />
+          </Key>
+          <Property Name="catID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="desc_cat" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_est_clte">
+          <Key>
+            <PropertyRef Name="est_clteID" />
+          </Key>
+          <Property Name="est_clteID" Type="int" Nullable="false" />
+          <Property Name="desc_est_clte" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_est_emp">
+          <Key>
+            <PropertyRef Name="est_empID" />
+          </Key>
+          <Property Name="est_empID" Type="int" Nullable="false" />
+          <Property Name="desc_est_emp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_est_fisc">
+          <Key>
+            <PropertyRef Name="est_fiscID" />
+          </Key>
+          <Property Name="est_fiscID" Type="int" Nullable="false" />
+          <Property Name="desc_est_fisc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_est_inv_prod">
+          <Key>
+            <PropertyRef Name="est_inv_prodID" />
+          </Key>
+          <Property Name="est_inv_prodID" Type="int" Nullable="false" />
+          <Property Name="desc_est_inv_prod" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_est_prov">
+          <Key>
+            <PropertyRef Name="est_provID" />
+          </Key>
+          <Property Name="est_provID" Type="int" Nullable="false" />
+          <Property Name="desc_est_prov" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_est_usr">
+          <Key>
+            <PropertyRef Name="est_usrID" />
+          </Key>
+          <Property Name="est_usrID" Type="int" Nullable="false" />
+          <Property Name="desc_est_usr" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_linea">
+          <Key>
+            <PropertyRef Name="lineaID" />
+          </Key>
+          <Property Name="lineaID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="desc_linea" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_marca">
+          <Key>
+            <PropertyRef Name="marcaID" />
+          </Key>
+          <Property Name="marcaID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="desc_marca" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_tipo_rfc">
+          <Key>
+            <PropertyRef Name="tipo_rfcID" />
+          </Key>
+          <Property Name="tipo_rfcID" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_rfc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fact_tipo_usr">
+          <Key>
+            <PropertyRef Name="tipo_usrID" />
+          </Key>
+          <Property Name="tipo_usrID" Type="int" Nullable="false" />
+          <Property Name="desc_tipo_usr" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="inf_clte">
+          <Key>
+            <PropertyRef Name="clteID" />
+          </Key>
+          <Property Name="clteID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_clteID" Type="int" />
+          <Property Name="cod_clte" Type="varchar" MaxLength="20" />
+          <Property Name="tipo_rfcID" Type="int" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="rs" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="callenum" Type="varchar" MaxLength="300" />
+          <Property Name="d_codigo" Type="varchar" MaxLength="6" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="coment" Type="varchar(max)" />
+          <Property Name="fech_reg" Type="datetime" />
+          <Property Name="empID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="usrID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_emp">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_empID" Type="int" />
+          <Property Name="nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tel" Type="varchar" MaxLength="16" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="calle_num" Type="varchar" MaxLength="250" />
+          <Property Name="d_codigo" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="id_asenta_cpcons" Type="int" Nullable="false" />
+          <Property Name="fech_reg" Type="date" />
+        </EntityType>
+        <EntityType Name="inf_fisc">
+          <Key>
+            <PropertyRef Name="fiscID" />
+          </Key>
+          <Property Name="fiscID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_fiscID" Type="int" />
+          <Property Name="cod_fisc" Type="varchar" MaxLength="20" />
+          <Property Name="tipo_rfcID" Type="int" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="rs" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="callenum" Type="varchar" MaxLength="300" />
+          <Property Name="d_codigo" Type="varchar" MaxLength="6" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="coment" Type="varchar(max)" />
+          <Property Name="fech_reg" Type="datetime" />
+          <Property Name="empID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="usrID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_inv">
+          <Key>
+            <PropertyRef Name="inv_prodID" />
+          </Key>
+          <Property Name="inv_prodID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_inv_prodID" Type="int" />
+          <Property Name="catID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="marcaID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lineaID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="cod_inv_prod" Type="varchar" MaxLength="50" />
+          <Property Name="desc_inv_prod" Type="varchar(max)" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="cant_min" Type="int" />
+          <Property Name="cost_compra" Type="money" />
+          <Property Name="margen" Type="int" />
+          <Property Name="empID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="usrID" Type="uniqueidentifier" />
+          <Property Name="fech_reg" Type="date" />
+        </EntityType>
+        <EntityType Name="inf_prov">
+          <Key>
+            <PropertyRef Name="provID" />
+          </Key>
+          <Property Name="provID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_provID" Type="int" />
+          <Property Name="cod_prov" Type="varchar" MaxLength="20" />
+          <Property Name="tipo_rfcID" Type="int" />
+          <Property Name="rfc" Type="varchar" MaxLength="50" />
+          <Property Name="rs" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="callenum" Type="varchar" MaxLength="300" />
+          <Property Name="d_codigo" Type="varchar" MaxLength="6" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="coment" Type="varchar(max)" />
+          <Property Name="fech_reg" Type="datetime" />
+          <Property Name="empID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="usrID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_sepomex">
+          <Key>
+            <PropertyRef Name="d_codigo" />
+            <PropertyRef Name="id_asenta_cpcons" />
+          </Key>
+          <Property Name="d_codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="d_asenta" Type="varchar" MaxLength="150" />
+          <Property Name="d_tipo_asenta" Type="varchar" MaxLength="50" />
+          <Property Name="d_mnpio" Type="varchar" MaxLength="50" />
+          <Property Name="d_estado" Type="varchar" MaxLength="50" />
+          <Property Name="d_ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="d_cp" Type="varchar" MaxLength="50" />
+          <Property Name="c_estado" Type="varchar" MaxLength="50" />
+          <Property Name="c_oficina" Type="varchar" MaxLength="50" />
+          <Property Name="c_cp" Type="varchar" MaxLength="50" />
+          <Property Name="c_tipo_asenta" Type="varchar" MaxLength="50" />
+          <Property Name="c_mnpio" Type="varchar" MaxLength="50" />
+          <Property Name="id_asenta_cpcons" Type="int" Nullable="false" />
+          <Property Name="d_zona" Type="varchar" MaxLength="50" />
+          <Property Name="c_cve_ciudad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="inf_usr">
+          <Key>
+            <PropertyRef Name="usrID" />
+          </Key>
+          <Property Name="usrID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="est_usrID" Type="int" />
+          <Property Name="tipo_usrID" Type="int" />
+          <Property Name="code_usr" Type="varchar" MaxLength="50" />
+          <Property Name="noms" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apat" Type="varchar" MaxLength="50" />
+          <Property Name="amat" Type="varchar" MaxLength="50" />
+          <Property Name="usr" Type="varchar" MaxLength="50" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="tel" Type="varchar" MaxLength="16" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="calle_num" Type="varchar" MaxLength="250" />
+          <Property Name="d_codigo" Type="varchar" MaxLength="5" />
+          <Property Name="id_asenta_cpcons" Type="int" />
+          <Property Name="fech_reg" Type="date" />
+          <Property Name="empID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_inf_clte_fact_est_clte">
+          <End Role="fact_est_clte" Type="Self.fact_est_clte" Multiplicity="0..1" />
+          <End Role="inf_clte" Type="Self.inf_clte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_clte">
+              <PropertyRef Name="est_clteID" />
+            </Principal>
+            <Dependent Role="inf_clte">
+              <PropertyRef Name="est_clteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_clte_fact_tipo_rfc">
+          <End Role="fact_tipo_rfc" Type="Self.fact_tipo_rfc" Multiplicity="0..1" />
+          <End Role="inf_clte" Type="Self.inf_clte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Principal>
+            <Dependent Role="inf_clte">
+              <PropertyRef Name="tipo_rfcID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_clte_inf_emp">
+          <End Role="inf_emp" Type="Self.inf_emp" Multiplicity="1" />
+          <End Role="inf_clte" Type="Self.inf_clte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_clte">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_emp_fact_est_emp">
+          <End Role="fact_est_emp" Type="Self.fact_est_emp" Multiplicity="0..1" />
+          <End Role="inf_emp" Type="Self.inf_emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_emp">
+              <PropertyRef Name="est_empID" />
+            </Principal>
+            <Dependent Role="inf_emp">
+              <PropertyRef Name="est_empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fisc_fact_est_fisc">
+          <End Role="fact_est_fisc" Type="Self.fact_est_fisc" Multiplicity="0..1" />
+          <End Role="inf_fisc" Type="Self.inf_fisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_fisc">
+              <PropertyRef Name="est_fiscID" />
+            </Principal>
+            <Dependent Role="inf_fisc">
+              <PropertyRef Name="est_fiscID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fisc_fact_tipo_rfc">
+          <End Role="fact_tipo_rfc" Type="Self.fact_tipo_rfc" Multiplicity="0..1" />
+          <End Role="inf_fisc" Type="Self.inf_fisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Principal>
+            <Dependent Role="inf_fisc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fisc_inf_emp">
+          <End Role="inf_emp" Type="Self.inf_emp" Multiplicity="1" />
+          <End Role="inf_fisc" Type="Self.inf_fisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_fisc">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_cat">
+          <End Role="fact_cat" Type="Self.fact_cat" Multiplicity="1" />
+          <End Role="inf_inv" Type="Self.inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_cat">
+              <PropertyRef Name="catID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="catID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_est_inv_prod">
+          <End Role="fact_est_inv_prod" Type="Self.fact_est_inv_prod" Multiplicity="0..1" />
+          <End Role="inf_inv" Type="Self.inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_inv_prod">
+              <PropertyRef Name="est_inv_prodID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="est_inv_prodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_linea">
+          <End Role="fact_linea" Type="Self.fact_linea" Multiplicity="1" />
+          <End Role="inf_inv" Type="Self.inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_linea">
+              <PropertyRef Name="lineaID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="lineaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_marca">
+          <End Role="fact_marca" Type="Self.fact_marca" Multiplicity="1" />
+          <End Role="inf_inv" Type="Self.inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_marca">
+              <PropertyRef Name="marcaID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="marcaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_inf_emp">
+          <End Role="inf_emp" Type="Self.inf_emp" Multiplicity="1" />
+          <End Role="inf_inv" Type="Self.inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_prov_fact_est_prov">
+          <End Role="fact_est_prov" Type="Self.fact_est_prov" Multiplicity="0..1" />
+          <End Role="inf_prov" Type="Self.inf_prov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_prov">
+              <PropertyRef Name="est_provID" />
+            </Principal>
+            <Dependent Role="inf_prov">
+              <PropertyRef Name="est_provID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_prov_fact_tipo_rfc">
+          <End Role="fact_tipo_rfc" Type="Self.fact_tipo_rfc" Multiplicity="0..1" />
+          <End Role="inf_prov" Type="Self.inf_prov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Principal>
+            <Dependent Role="inf_prov">
+              <PropertyRef Name="tipo_rfcID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_prov_inf_emp">
+          <End Role="inf_emp" Type="Self.inf_emp" Multiplicity="1" />
+          <End Role="inf_prov" Type="Self.inf_prov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_prov">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_fact_est_usr">
+          <End Role="fact_est_usr" Type="Self.fact_est_usr" Multiplicity="0..1" />
+          <End Role="inf_usr" Type="Self.inf_usr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_usr">
+              <PropertyRef Name="est_usrID" />
+            </Principal>
+            <Dependent Role="inf_usr">
+              <PropertyRef Name="est_usrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_fact_tipo_usr">
+          <End Role="fact_tipo_usr" Type="Self.fact_tipo_usr" Multiplicity="0..1" />
+          <End Role="inf_usr" Type="Self.inf_usr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usr">
+              <PropertyRef Name="tipo_usrID" />
+            </Principal>
+            <Dependent Role="inf_usr">
+              <PropertyRef Name="tipo_usrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_inf_emp">
+          <End Role="inf_emp" Type="Self.inf_emp" Multiplicity="1" />
+          <End Role="inf_usr" Type="Self.inf_usr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_usr">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_admModelStoreContainer">
+          <EntitySet Name="fact_cat" EntityType="Self.fact_cat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_clte" EntityType="Self.fact_est_clte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_emp" EntityType="Self.fact_est_emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_fisc" EntityType="Self.fact_est_fisc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_inv_prod" EntityType="Self.fact_est_inv_prod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_prov" EntityType="Self.fact_est_prov" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_est_usr" EntityType="Self.fact_est_usr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_linea" EntityType="Self.fact_linea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_marca" EntityType="Self.fact_marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_rfc" EntityType="Self.fact_tipo_rfc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fact_tipo_usr" EntityType="Self.fact_tipo_usr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_clte" EntityType="Self.inf_clte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_emp" EntityType="Self.inf_emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_fisc" EntityType="Self.inf_fisc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_inv" EntityType="Self.inf_inv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_prov" EntityType="Self.inf_prov" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_sepomex" EntityType="Self.inf_sepomex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_usr" EntityType="Self.inf_usr" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_inf_clte_fact_est_clte" Association="Self.FK_inf_clte_fact_est_clte">
+            <End Role="fact_est_clte" EntitySet="fact_est_clte" />
+            <End Role="inf_clte" EntitySet="inf_clte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_clte_fact_tipo_rfc" Association="Self.FK_inf_clte_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_clte" EntitySet="inf_clte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_clte_inf_emp" Association="Self.FK_inf_clte_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_clte" EntitySet="inf_clte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_emp_fact_est_emp" Association="Self.FK_inf_emp_fact_est_emp">
+            <End Role="fact_est_emp" EntitySet="fact_est_emp" />
+            <End Role="inf_emp" EntitySet="inf_emp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fisc_fact_est_fisc" Association="Self.FK_inf_fisc_fact_est_fisc">
+            <End Role="fact_est_fisc" EntitySet="fact_est_fisc" />
+            <End Role="inf_fisc" EntitySet="inf_fisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fisc_fact_tipo_rfc" Association="Self.FK_inf_fisc_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_fisc" EntitySet="inf_fisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fisc_inf_emp" Association="Self.FK_inf_fisc_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_fisc" EntitySet="inf_fisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_cat" Association="Self.FK_inf_inv_fact_cat">
+            <End Role="fact_cat" EntitySet="fact_cat" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_est_inv_prod" Association="Self.FK_inf_inv_fact_est_inv_prod">
+            <End Role="fact_est_inv_prod" EntitySet="fact_est_inv_prod" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_linea" Association="Self.FK_inf_inv_fact_linea">
+            <End Role="fact_linea" EntitySet="fact_linea" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_marca" Association="Self.FK_inf_inv_fact_marca">
+            <End Role="fact_marca" EntitySet="fact_marca" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_inf_emp" Association="Self.FK_inf_inv_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_prov_fact_est_prov" Association="Self.FK_inf_prov_fact_est_prov">
+            <End Role="fact_est_prov" EntitySet="fact_est_prov" />
+            <End Role="inf_prov" EntitySet="inf_prov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_prov_fact_tipo_rfc" Association="Self.FK_inf_prov_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_prov" EntitySet="inf_prov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_prov_inf_emp" Association="Self.FK_inf_prov_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_prov" EntitySet="inf_prov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_fact_est_usr" Association="Self.FK_inf_usr_fact_est_usr">
+            <End Role="fact_est_usr" EntitySet="fact_est_usr" />
+            <End Role="inf_usr" EntitySet="inf_usr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_fact_tipo_usr" Association="Self.FK_inf_usr_fact_tipo_usr">
+            <End Role="fact_tipo_usr" EntitySet="fact_tipo_usr" />
+            <End Role="inf_usr" EntitySet="inf_usr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_inf_emp" Association="Self.FK_inf_usr_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_usr" EntitySet="inf_usr" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_admModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="db_admEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="fact_cat" EntityType="db_admModel.fact_cat" />
+          <EntitySet Name="fact_est_clte" EntityType="db_admModel.fact_est_clte" />
+          <EntitySet Name="fact_est_emp" EntityType="db_admModel.fact_est_emp" />
+          <EntitySet Name="fact_est_fisc" EntityType="db_admModel.fact_est_fisc" />
+          <EntitySet Name="fact_est_inv_prod" EntityType="db_admModel.fact_est_inv_prod" />
+          <EntitySet Name="fact_est_prov" EntityType="db_admModel.fact_est_prov" />
+          <EntitySet Name="fact_est_usr" EntityType="db_admModel.fact_est_usr" />
+          <EntitySet Name="fact_linea" EntityType="db_admModel.fact_linea" />
+          <EntitySet Name="fact_marca" EntityType="db_admModel.fact_marca" />
+          <EntitySet Name="fact_tipo_rfc" EntityType="db_admModel.fact_tipo_rfc" />
+          <EntitySet Name="fact_tipo_usr" EntityType="db_admModel.fact_tipo_usr" />
+          <EntitySet Name="inf_clte" EntityType="db_admModel.inf_clte" />
+          <EntitySet Name="inf_emp" EntityType="db_admModel.inf_emp" />
+          <EntitySet Name="inf_fisc" EntityType="db_admModel.inf_fisc" />
+          <EntitySet Name="inf_inv" EntityType="db_admModel.inf_inv" />
+          <EntitySet Name="inf_prov" EntityType="db_admModel.inf_prov" />
+          <EntitySet Name="inf_sepomex" EntityType="db_admModel.inf_sepomex" />
+          <EntitySet Name="inf_usr" EntityType="db_admModel.inf_usr" />
+          <AssociationSet Name="FK_inf_inv_fact_cat" Association="db_admModel.FK_inf_inv_fact_cat">
+            <End Role="fact_cat" EntitySet="fact_cat" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_clte_fact_est_clte" Association="db_admModel.FK_inf_clte_fact_est_clte">
+            <End Role="fact_est_clte" EntitySet="fact_est_clte" />
+            <End Role="inf_clte" EntitySet="inf_clte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_emp_fact_est_emp" Association="db_admModel.FK_inf_emp_fact_est_emp">
+            <End Role="fact_est_emp" EntitySet="fact_est_emp" />
+            <End Role="inf_emp" EntitySet="inf_emp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fisc_fact_est_fisc" Association="db_admModel.FK_inf_fisc_fact_est_fisc">
+            <End Role="fact_est_fisc" EntitySet="fact_est_fisc" />
+            <End Role="inf_fisc" EntitySet="inf_fisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_est_inv_prod" Association="db_admModel.FK_inf_inv_fact_est_inv_prod">
+            <End Role="fact_est_inv_prod" EntitySet="fact_est_inv_prod" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_prov_fact_est_prov" Association="db_admModel.FK_inf_prov_fact_est_prov">
+            <End Role="fact_est_prov" EntitySet="fact_est_prov" />
+            <End Role="inf_prov" EntitySet="inf_prov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_fact_est_usr" Association="db_admModel.FK_inf_usr_fact_est_usr">
+            <End Role="fact_est_usr" EntitySet="fact_est_usr" />
+            <End Role="inf_usr" EntitySet="inf_usr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_linea" Association="db_admModel.FK_inf_inv_fact_linea">
+            <End Role="fact_linea" EntitySet="fact_linea" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_fact_marca" Association="db_admModel.FK_inf_inv_fact_marca">
+            <End Role="fact_marca" EntitySet="fact_marca" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_clte_fact_tipo_rfc" Association="db_admModel.FK_inf_clte_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_clte" EntitySet="inf_clte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fisc_fact_tipo_rfc" Association="db_admModel.FK_inf_fisc_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_fisc" EntitySet="inf_fisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_prov_fact_tipo_rfc" Association="db_admModel.FK_inf_prov_fact_tipo_rfc">
+            <End Role="fact_tipo_rfc" EntitySet="fact_tipo_rfc" />
+            <End Role="inf_prov" EntitySet="inf_prov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_fact_tipo_usr" Association="db_admModel.FK_inf_usr_fact_tipo_usr">
+            <End Role="fact_tipo_usr" EntitySet="fact_tipo_usr" />
+            <End Role="inf_usr" EntitySet="inf_usr" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_clte_inf_emp" Association="db_admModel.FK_inf_clte_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_clte" EntitySet="inf_clte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_fisc_inf_emp" Association="db_admModel.FK_inf_fisc_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_fisc" EntitySet="inf_fisc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_inv_inf_emp" Association="db_admModel.FK_inf_inv_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_inv" EntitySet="inf_inv" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_prov_inf_emp" Association="db_admModel.FK_inf_prov_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_prov" EntitySet="inf_prov" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_usr_inf_emp" Association="db_admModel.FK_inf_usr_inf_emp">
+            <End Role="inf_emp" EntitySet="inf_emp" />
+            <End Role="inf_usr" EntitySet="inf_usr" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="fact_cat">
+          <Key>
+            <PropertyRef Name="catID" />
+          </Key>
+          <Property Name="catID" Type="Guid" Nullable="false" />
+          <Property Name="desc_cat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_inv" Relationship="db_admModel.FK_inf_inv_fact_cat" FromRole="fact_cat" ToRole="inf_inv" />
+        </EntityType>
+        <EntityType Name="fact_est_clte">
+          <Key>
+            <PropertyRef Name="est_clteID" />
+          </Key>
+          <Property Name="est_clteID" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_clte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_clte" Relationship="db_admModel.FK_inf_clte_fact_est_clte" FromRole="fact_est_clte" ToRole="inf_clte" />
+        </EntityType>
+        <EntityType Name="fact_est_emp">
+          <Key>
+            <PropertyRef Name="est_empID" />
+          </Key>
+          <Property Name="est_empID" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_emp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_emp" Relationship="db_admModel.FK_inf_emp_fact_est_emp" FromRole="fact_est_emp" ToRole="inf_emp" />
+        </EntityType>
+        <EntityType Name="fact_est_fisc">
+          <Key>
+            <PropertyRef Name="est_fiscID" />
+          </Key>
+          <Property Name="est_fiscID" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_fisc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_fisc" Relationship="db_admModel.FK_inf_fisc_fact_est_fisc" FromRole="fact_est_fisc" ToRole="inf_fisc" />
+        </EntityType>
+        <EntityType Name="fact_est_inv_prod">
+          <Key>
+            <PropertyRef Name="est_inv_prodID" />
+          </Key>
+          <Property Name="est_inv_prodID" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_inv_prod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_inv" Relationship="db_admModel.FK_inf_inv_fact_est_inv_prod" FromRole="fact_est_inv_prod" ToRole="inf_inv" />
+        </EntityType>
+        <EntityType Name="fact_est_prov">
+          <Key>
+            <PropertyRef Name="est_provID" />
+          </Key>
+          <Property Name="est_provID" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_prov" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_prov" Relationship="db_admModel.FK_inf_prov_fact_est_prov" FromRole="fact_est_prov" ToRole="inf_prov" />
+        </EntityType>
+        <EntityType Name="fact_est_usr">
+          <Key>
+            <PropertyRef Name="est_usrID" />
+          </Key>
+          <Property Name="est_usrID" Type="Int32" Nullable="false" />
+          <Property Name="desc_est_usr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_usr" Relationship="db_admModel.FK_inf_usr_fact_est_usr" FromRole="fact_est_usr" ToRole="inf_usr" />
+        </EntityType>
+        <EntityType Name="fact_linea">
+          <Key>
+            <PropertyRef Name="lineaID" />
+          </Key>
+          <Property Name="lineaID" Type="Guid" Nullable="false" />
+          <Property Name="desc_linea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_inv" Relationship="db_admModel.FK_inf_inv_fact_linea" FromRole="fact_linea" ToRole="inf_inv" />
+        </EntityType>
+        <EntityType Name="fact_marca">
+          <Key>
+            <PropertyRef Name="marcaID" />
+          </Key>
+          <Property Name="marcaID" Type="Guid" Nullable="false" />
+          <Property Name="desc_marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_inv" Relationship="db_admModel.FK_inf_inv_fact_marca" FromRole="fact_marca" ToRole="inf_inv" />
+        </EntityType>
+        <EntityType Name="fact_tipo_rfc">
+          <Key>
+            <PropertyRef Name="tipo_rfcID" />
+          </Key>
+          <Property Name="tipo_rfcID" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_clte" Relationship="db_admModel.FK_inf_clte_fact_tipo_rfc" FromRole="fact_tipo_rfc" ToRole="inf_clte" />
+          <NavigationProperty Name="inf_fisc" Relationship="db_admModel.FK_inf_fisc_fact_tipo_rfc" FromRole="fact_tipo_rfc" ToRole="inf_fisc" />
+          <NavigationProperty Name="inf_prov" Relationship="db_admModel.FK_inf_prov_fact_tipo_rfc" FromRole="fact_tipo_rfc" ToRole="inf_prov" />
+        </EntityType>
+        <EntityType Name="fact_tipo_usr">
+          <Key>
+            <PropertyRef Name="tipo_usrID" />
+          </Key>
+          <Property Name="tipo_usrID" Type="Int32" Nullable="false" />
+          <Property Name="desc_tipo_usr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inf_usr" Relationship="db_admModel.FK_inf_usr_fact_tipo_usr" FromRole="fact_tipo_usr" ToRole="inf_usr" />
+        </EntityType>
+        <EntityType Name="inf_clte">
+          <Key>
+            <PropertyRef Name="clteID" />
+          </Key>
+          <Property Name="clteID" Type="Guid" Nullable="false" />
+          <Property Name="est_clteID" Type="Int32" />
+          <Property Name="cod_clte" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_rfcID" Type="Int32" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="callenum" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="d_codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="coment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fech_reg" Type="DateTime" Precision="3" />
+          <Property Name="empID" Type="Guid" Nullable="false" />
+          <Property Name="usrID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_est_clte" Relationship="db_admModel.FK_inf_clte_fact_est_clte" FromRole="inf_clte" ToRole="fact_est_clte" />
+          <NavigationProperty Name="fact_tipo_rfc" Relationship="db_admModel.FK_inf_clte_fact_tipo_rfc" FromRole="inf_clte" ToRole="fact_tipo_rfc" />
+          <NavigationProperty Name="inf_emp" Relationship="db_admModel.FK_inf_clte_inf_emp" FromRole="inf_clte" ToRole="inf_emp" />
+        </EntityType>
+        <EntityType Name="inf_emp">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="Guid" Nullable="false" />
+          <Property Name="est_empID" Type="Int32" />
+          <Property Name="nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calle_num" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="d_codigo" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" Nullable="false" />
+          <Property Name="fech_reg" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="fact_est_emp" Relationship="db_admModel.FK_inf_emp_fact_est_emp" FromRole="inf_emp" ToRole="fact_est_emp" />
+          <NavigationProperty Name="inf_clte" Relationship="db_admModel.FK_inf_clte_inf_emp" FromRole="inf_emp" ToRole="inf_clte" />
+          <NavigationProperty Name="inf_fisc" Relationship="db_admModel.FK_inf_fisc_inf_emp" FromRole="inf_emp" ToRole="inf_fisc" />
+          <NavigationProperty Name="inf_inv" Relationship="db_admModel.FK_inf_inv_inf_emp" FromRole="inf_emp" ToRole="inf_inv" />
+          <NavigationProperty Name="inf_prov" Relationship="db_admModel.FK_inf_prov_inf_emp" FromRole="inf_emp" ToRole="inf_prov" />
+          <NavigationProperty Name="inf_usr" Relationship="db_admModel.FK_inf_usr_inf_emp" FromRole="inf_emp" ToRole="inf_usr" />
+        </EntityType>
+        <EntityType Name="inf_fisc">
+          <Key>
+            <PropertyRef Name="fiscID" />
+          </Key>
+          <Property Name="fiscID" Type="Guid" Nullable="false" />
+          <Property Name="est_fiscID" Type="Int32" />
+          <Property Name="cod_fisc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_rfcID" Type="Int32" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="callenum" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="d_codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="coment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fech_reg" Type="DateTime" Precision="3" />
+          <Property Name="empID" Type="Guid" Nullable="false" />
+          <Property Name="usrID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_est_fisc" Relationship="db_admModel.FK_inf_fisc_fact_est_fisc" FromRole="inf_fisc" ToRole="fact_est_fisc" />
+          <NavigationProperty Name="fact_tipo_rfc" Relationship="db_admModel.FK_inf_fisc_fact_tipo_rfc" FromRole="inf_fisc" ToRole="fact_tipo_rfc" />
+          <NavigationProperty Name="inf_emp" Relationship="db_admModel.FK_inf_fisc_inf_emp" FromRole="inf_fisc" ToRole="inf_emp" />
+        </EntityType>
+        <EntityType Name="inf_inv">
+          <Key>
+            <PropertyRef Name="inv_prodID" />
+          </Key>
+          <Property Name="inv_prodID" Type="Guid" Nullable="false" />
+          <Property Name="est_inv_prodID" Type="Int32" />
+          <Property Name="catID" Type="Guid" Nullable="false" />
+          <Property Name="marcaID" Type="Guid" Nullable="false" />
+          <Property Name="lineaID" Type="Guid" Nullable="false" />
+          <Property Name="cod_inv_prod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="desc_inv_prod" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="cant_min" Type="Int32" />
+          <Property Name="cost_compra" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="margen" Type="Int32" />
+          <Property Name="empID" Type="Guid" Nullable="false" />
+          <Property Name="usrID" Type="Guid" />
+          <Property Name="fech_reg" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="fact_cat" Relationship="db_admModel.FK_inf_inv_fact_cat" FromRole="inf_inv" ToRole="fact_cat" />
+          <NavigationProperty Name="fact_est_inv_prod" Relationship="db_admModel.FK_inf_inv_fact_est_inv_prod" FromRole="inf_inv" ToRole="fact_est_inv_prod" />
+          <NavigationProperty Name="fact_linea" Relationship="db_admModel.FK_inf_inv_fact_linea" FromRole="inf_inv" ToRole="fact_linea" />
+          <NavigationProperty Name="fact_marca" Relationship="db_admModel.FK_inf_inv_fact_marca" FromRole="inf_inv" ToRole="fact_marca" />
+          <NavigationProperty Name="inf_emp" Relationship="db_admModel.FK_inf_inv_inf_emp" FromRole="inf_inv" ToRole="inf_emp" />
+        </EntityType>
+        <EntityType Name="inf_prov">
+          <Key>
+            <PropertyRef Name="provID" />
+          </Key>
+          <Property Name="provID" Type="Guid" Nullable="false" />
+          <Property Name="est_provID" Type="Int32" />
+          <Property Name="cod_prov" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_rfcID" Type="Int32" />
+          <Property Name="rfc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="callenum" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="d_codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="coment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fech_reg" Type="DateTime" Precision="3" />
+          <Property Name="empID" Type="Guid" Nullable="false" />
+          <Property Name="usrID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_est_prov" Relationship="db_admModel.FK_inf_prov_fact_est_prov" FromRole="inf_prov" ToRole="fact_est_prov" />
+          <NavigationProperty Name="fact_tipo_rfc" Relationship="db_admModel.FK_inf_prov_fact_tipo_rfc" FromRole="inf_prov" ToRole="fact_tipo_rfc" />
+          <NavigationProperty Name="inf_emp" Relationship="db_admModel.FK_inf_prov_inf_emp" FromRole="inf_prov" ToRole="inf_emp" />
+        </EntityType>
+        <EntityType Name="inf_sepomex">
+          <Key>
+            <PropertyRef Name="d_codigo" />
+            <PropertyRef Name="id_asenta_cpcons" />
+          </Key>
+          <Property Name="d_codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_asenta" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="d_tipo_asenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_mnpio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="d_cp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_oficina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_cp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_tipo_asenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_mnpio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" Nullable="false" />
+          <Property Name="d_zona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="c_cve_ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="inf_usr">
+          <Key>
+            <PropertyRef Name="usrID" />
+          </Key>
+          <Property Name="usrID" Type="Guid" Nullable="false" />
+          <Property Name="est_usrID" Type="Int32" />
+          <Property Name="tipo_usrID" Type="Int32" />
+          <Property Name="code_usr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="noms" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calle_num" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="d_codigo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="id_asenta_cpcons" Type="Int32" />
+          <Property Name="fech_reg" Type="DateTime" Precision="0" />
+          <Property Name="empID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="fact_est_usr" Relationship="db_admModel.FK_inf_usr_fact_est_usr" FromRole="inf_usr" ToRole="fact_est_usr" />
+          <NavigationProperty Name="fact_tipo_usr" Relationship="db_admModel.FK_inf_usr_fact_tipo_usr" FromRole="inf_usr" ToRole="fact_tipo_usr" />
+          <NavigationProperty Name="inf_emp" Relationship="db_admModel.FK_inf_usr_inf_emp" FromRole="inf_usr" ToRole="inf_emp" />
+        </EntityType>
+        <Association Name="FK_inf_inv_fact_cat">
+          <End Type="db_admModel.fact_cat" Role="fact_cat" Multiplicity="1" />
+          <End Type="db_admModel.inf_inv" Role="inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_cat">
+              <PropertyRef Name="catID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="catID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_clte_fact_est_clte">
+          <End Type="db_admModel.fact_est_clte" Role="fact_est_clte" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_clte" Role="inf_clte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_clte">
+              <PropertyRef Name="est_clteID" />
+            </Principal>
+            <Dependent Role="inf_clte">
+              <PropertyRef Name="est_clteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_emp_fact_est_emp">
+          <End Type="db_admModel.fact_est_emp" Role="fact_est_emp" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_emp" Role="inf_emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_emp">
+              <PropertyRef Name="est_empID" />
+            </Principal>
+            <Dependent Role="inf_emp">
+              <PropertyRef Name="est_empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fisc_fact_est_fisc">
+          <End Type="db_admModel.fact_est_fisc" Role="fact_est_fisc" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_fisc" Role="inf_fisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_fisc">
+              <PropertyRef Name="est_fiscID" />
+            </Principal>
+            <Dependent Role="inf_fisc">
+              <PropertyRef Name="est_fiscID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_est_inv_prod">
+          <End Type="db_admModel.fact_est_inv_prod" Role="fact_est_inv_prod" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_inv" Role="inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_inv_prod">
+              <PropertyRef Name="est_inv_prodID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="est_inv_prodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_prov_fact_est_prov">
+          <End Type="db_admModel.fact_est_prov" Role="fact_est_prov" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_prov" Role="inf_prov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_prov">
+              <PropertyRef Name="est_provID" />
+            </Principal>
+            <Dependent Role="inf_prov">
+              <PropertyRef Name="est_provID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_fact_est_usr">
+          <End Type="db_admModel.fact_est_usr" Role="fact_est_usr" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_usr" Role="inf_usr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_est_usr">
+              <PropertyRef Name="est_usrID" />
+            </Principal>
+            <Dependent Role="inf_usr">
+              <PropertyRef Name="est_usrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_linea">
+          <End Type="db_admModel.fact_linea" Role="fact_linea" Multiplicity="1" />
+          <End Type="db_admModel.inf_inv" Role="inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_linea">
+              <PropertyRef Name="lineaID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="lineaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_fact_marca">
+          <End Type="db_admModel.fact_marca" Role="fact_marca" Multiplicity="1" />
+          <End Type="db_admModel.inf_inv" Role="inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_marca">
+              <PropertyRef Name="marcaID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="marcaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_clte_fact_tipo_rfc">
+          <End Type="db_admModel.fact_tipo_rfc" Role="fact_tipo_rfc" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_clte" Role="inf_clte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Principal>
+            <Dependent Role="inf_clte">
+              <PropertyRef Name="tipo_rfcID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fisc_fact_tipo_rfc">
+          <End Type="db_admModel.fact_tipo_rfc" Role="fact_tipo_rfc" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_fisc" Role="inf_fisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Principal>
+            <Dependent Role="inf_fisc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_prov_fact_tipo_rfc">
+          <End Type="db_admModel.fact_tipo_rfc" Role="fact_tipo_rfc" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_prov" Role="inf_prov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_rfc">
+              <PropertyRef Name="tipo_rfcID" />
+            </Principal>
+            <Dependent Role="inf_prov">
+              <PropertyRef Name="tipo_rfcID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_fact_tipo_usr">
+          <End Type="db_admModel.fact_tipo_usr" Role="fact_tipo_usr" Multiplicity="0..1" />
+          <End Type="db_admModel.inf_usr" Role="inf_usr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fact_tipo_usr">
+              <PropertyRef Name="tipo_usrID" />
+            </Principal>
+            <Dependent Role="inf_usr">
+              <PropertyRef Name="tipo_usrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_clte_inf_emp">
+          <End Type="db_admModel.inf_emp" Role="inf_emp" Multiplicity="1" />
+          <End Type="db_admModel.inf_clte" Role="inf_clte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_clte">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_fisc_inf_emp">
+          <End Type="db_admModel.inf_emp" Role="inf_emp" Multiplicity="1" />
+          <End Type="db_admModel.inf_fisc" Role="inf_fisc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_fisc">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_inv_inf_emp">
+          <End Type="db_admModel.inf_emp" Role="inf_emp" Multiplicity="1" />
+          <End Type="db_admModel.inf_inv" Role="inf_inv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_inv">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_prov_inf_emp">
+          <End Type="db_admModel.inf_emp" Role="inf_emp" Multiplicity="1" />
+          <End Type="db_admModel.inf_prov" Role="inf_prov" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_prov">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_usr_inf_emp">
+          <End Type="db_admModel.inf_emp" Role="inf_emp" Multiplicity="1" />
+          <End Type="db_admModel.inf_usr" Role="inf_usr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_emp">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="inf_usr">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_admModelStoreContainer" CdmEntityContainer="db_admEntities">
+          <EntitySetMapping Name="fact_cat">
+            <EntityTypeMapping TypeName="db_admModel.fact_cat">
+              <MappingFragment StoreEntitySet="fact_cat">
+                <ScalarProperty Name="desc_cat" ColumnName="desc_cat" />
+                <ScalarProperty Name="catID" ColumnName="catID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_clte">
+            <EntityTypeMapping TypeName="db_admModel.fact_est_clte">
+              <MappingFragment StoreEntitySet="fact_est_clte">
+                <ScalarProperty Name="desc_est_clte" ColumnName="desc_est_clte" />
+                <ScalarProperty Name="est_clteID" ColumnName="est_clteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_emp">
+            <EntityTypeMapping TypeName="db_admModel.fact_est_emp">
+              <MappingFragment StoreEntitySet="fact_est_emp">
+                <ScalarProperty Name="desc_est_emp" ColumnName="desc_est_emp" />
+                <ScalarProperty Name="est_empID" ColumnName="est_empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_fisc">
+            <EntityTypeMapping TypeName="db_admModel.fact_est_fisc">
+              <MappingFragment StoreEntitySet="fact_est_fisc">
+                <ScalarProperty Name="desc_est_fisc" ColumnName="desc_est_fisc" />
+                <ScalarProperty Name="est_fiscID" ColumnName="est_fiscID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_inv_prod">
+            <EntityTypeMapping TypeName="db_admModel.fact_est_inv_prod">
+              <MappingFragment StoreEntitySet="fact_est_inv_prod">
+                <ScalarProperty Name="desc_est_inv_prod" ColumnName="desc_est_inv_prod" />
+                <ScalarProperty Name="est_inv_prodID" ColumnName="est_inv_prodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_prov">
+            <EntityTypeMapping TypeName="db_admModel.fact_est_prov">
+              <MappingFragment StoreEntitySet="fact_est_prov">
+                <ScalarProperty Name="desc_est_prov" ColumnName="desc_est_prov" />
+                <ScalarProperty Name="est_provID" ColumnName="est_provID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_est_usr">
+            <EntityTypeMapping TypeName="db_admModel.fact_est_usr">
+              <MappingFragment StoreEntitySet="fact_est_usr">
+                <ScalarProperty Name="desc_est_usr" ColumnName="desc_est_usr" />
+                <ScalarProperty Name="est_usrID" ColumnName="est_usrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_linea">
+            <EntityTypeMapping TypeName="db_admModel.fact_linea">
+              <MappingFragment StoreEntitySet="fact_linea">
+                <ScalarProperty Name="desc_linea" ColumnName="desc_linea" />
+                <ScalarProperty Name="lineaID" ColumnName="lineaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_marca">
+            <EntityTypeMapping TypeName="db_admModel.fact_marca">
+              <MappingFragment StoreEntitySet="fact_marca">
+                <ScalarProperty Name="desc_marca" ColumnName="desc_marca" />
+                <ScalarProperty Name="marcaID" ColumnName="marcaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_rfc">
+            <EntityTypeMapping TypeName="db_admModel.fact_tipo_rfc">
+              <MappingFragment StoreEntitySet="fact_tipo_rfc">
+                <ScalarProperty Name="desc_tipo_rfc" ColumnName="desc_tipo_rfc" />
+                <ScalarProperty Name="tipo_rfcID" ColumnName="tipo_rfcID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_tipo_usr">
+            <EntityTypeMapping TypeName="db_admModel.fact_tipo_usr">
+              <MappingFragment StoreEntitySet="fact_tipo_usr">
+                <ScalarProperty Name="desc_tipo_usr" ColumnName="desc_tipo_usr" />
+                <ScalarProperty Name="tipo_usrID" ColumnName="tipo_usrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_clte">
+            <EntityTypeMapping TypeName="db_admModel.inf_clte">
+              <MappingFragment StoreEntitySet="inf_clte">
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="fech_reg" ColumnName="fech_reg" />
+                <ScalarProperty Name="coment" ColumnName="coment" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+                <ScalarProperty Name="callenum" ColumnName="callenum" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="rs" ColumnName="rs" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="tipo_rfcID" ColumnName="tipo_rfcID" />
+                <ScalarProperty Name="cod_clte" ColumnName="cod_clte" />
+                <ScalarProperty Name="est_clteID" ColumnName="est_clteID" />
+                <ScalarProperty Name="clteID" ColumnName="clteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_emp">
+            <EntityTypeMapping TypeName="db_admModel.inf_emp">
+              <MappingFragment StoreEntitySet="inf_emp">
+                <ScalarProperty Name="fech_reg" ColumnName="fech_reg" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+                <ScalarProperty Name="calle_num" ColumnName="calle_num" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="est_empID" ColumnName="est_empID" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_fisc">
+            <EntityTypeMapping TypeName="db_admModel.inf_fisc">
+              <MappingFragment StoreEntitySet="inf_fisc">
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="fech_reg" ColumnName="fech_reg" />
+                <ScalarProperty Name="coment" ColumnName="coment" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+                <ScalarProperty Name="callenum" ColumnName="callenum" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="rs" ColumnName="rs" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="tipo_rfcID" ColumnName="tipo_rfcID" />
+                <ScalarProperty Name="cod_fisc" ColumnName="cod_fisc" />
+                <ScalarProperty Name="est_fiscID" ColumnName="est_fiscID" />
+                <ScalarProperty Name="fiscID" ColumnName="fiscID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_inv">
+            <EntityTypeMapping TypeName="db_admModel.inf_inv">
+              <MappingFragment StoreEntitySet="inf_inv">
+                <ScalarProperty Name="fech_reg" ColumnName="fech_reg" />
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="margen" ColumnName="margen" />
+                <ScalarProperty Name="cost_compra" ColumnName="cost_compra" />
+                <ScalarProperty Name="cant_min" ColumnName="cant_min" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="desc_inv_prod" ColumnName="desc_inv_prod" />
+                <ScalarProperty Name="cod_inv_prod" ColumnName="cod_inv_prod" />
+                <ScalarProperty Name="lineaID" ColumnName="lineaID" />
+                <ScalarProperty Name="marcaID" ColumnName="marcaID" />
+                <ScalarProperty Name="catID" ColumnName="catID" />
+                <ScalarProperty Name="est_inv_prodID" ColumnName="est_inv_prodID" />
+                <ScalarProperty Name="inv_prodID" ColumnName="inv_prodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_prov">
+            <EntityTypeMapping TypeName="db_admModel.inf_prov">
+              <MappingFragment StoreEntitySet="inf_prov">
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="fech_reg" ColumnName="fech_reg" />
+                <ScalarProperty Name="coment" ColumnName="coment" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+                <ScalarProperty Name="callenum" ColumnName="callenum" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="rs" ColumnName="rs" />
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="tipo_rfcID" ColumnName="tipo_rfcID" />
+                <ScalarProperty Name="cod_prov" ColumnName="cod_prov" />
+                <ScalarProperty Name="est_provID" ColumnName="est_provID" />
+                <ScalarProperty Name="provID" ColumnName="provID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_sepomex">
+            <EntityTypeMapping TypeName="db_admModel.inf_sepomex">
+              <MappingFragment StoreEntitySet="inf_sepomex">
+                <ScalarProperty Name="c_cve_ciudad" ColumnName="c_cve_ciudad" />
+                <ScalarProperty Name="d_zona" ColumnName="d_zona" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="c_mnpio" ColumnName="c_mnpio" />
+                <ScalarProperty Name="c_tipo_asenta" ColumnName="c_tipo_asenta" />
+                <ScalarProperty Name="c_cp" ColumnName="c_cp" />
+                <ScalarProperty Name="c_oficina" ColumnName="c_oficina" />
+                <ScalarProperty Name="c_estado" ColumnName="c_estado" />
+                <ScalarProperty Name="d_cp" ColumnName="d_cp" />
+                <ScalarProperty Name="d_ciudad" ColumnName="d_ciudad" />
+                <ScalarProperty Name="d_estado" ColumnName="d_estado" />
+                <ScalarProperty Name="d_mnpio" ColumnName="d_mnpio" />
+                <ScalarProperty Name="d_tipo_asenta" ColumnName="d_tipo_asenta" />
+                <ScalarProperty Name="d_asenta" ColumnName="d_asenta" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_usr">
+            <EntityTypeMapping TypeName="db_admModel.inf_usr">
+              <MappingFragment StoreEntitySet="inf_usr">
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="fech_reg" ColumnName="fech_reg" />
+                <ScalarProperty Name="id_asenta_cpcons" ColumnName="id_asenta_cpcons" />
+                <ScalarProperty Name="d_codigo" ColumnName="d_codigo" />
+                <ScalarProperty Name="calle_num" ColumnName="calle_num" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="usr" ColumnName="usr" />
+                <ScalarProperty Name="amat" ColumnName="amat" />
+                <ScalarProperty Name="apat" ColumnName="apat" />
+                <ScalarProperty Name="noms" ColumnName="noms" />
+                <ScalarProperty Name="code_usr" ColumnName="code_usr" />
+                <ScalarProperty Name="tipo_usrID" ColumnName="tipo_usrID" />
+                <ScalarProperty Name="est_usrID" ColumnName="est_usrID" />
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
